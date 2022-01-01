@@ -25,3 +25,36 @@ cv2.imshow('Blurred2', img)
 cv2.waitKey(0)
 
 cv2.destroyAllWindows() 
+
+ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)       # max_value | 0
+cv2.imshow('BINARY', img)
+ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)   # 0 | max_value
+cv2.imshow('BINARY_INV', img)
+ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)        # threshold | original
+cv2.imshow('TRUNC', img)
+ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO)       # original | 0
+cv2.imshow('TOZERO', img)
+ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO_INV)   # 0 | original
+cv2.imshow('TOZERO_INV', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows() 
+
+
+# cv2.rectangle(img_name, start_point, end_point, line_color, thickness)
+rect = cv2.rectangle(img, (240, 230), (350,380), (0,255,0), 3)
+
+cv2.imshow('RECT', rect)
+cv2.waitKey(0)
+cv2.destroyAllWindows() 
+
+#cv2.circle(img_name, center_point, radius, line_color, thickness)
+circle = cv2.circle(img, (290, 300), 80, (255,0,0), 5)
+cv2.imshow('CIRCLE', circle)
+cv2.waitKey(0)
+cv2.destroyAllWindows() 
+
+# cv2.putText(text, point(좌측하단), font, font_scale, color)
+text = cv2.putText(img, "Hello World", (50, 80), cv2.FONT_HERSHEY_DUPLEX, 2, (255, 255, 255))
+cv2.imshow('TEXT', text)
+cv2.waitKey(0)
+cv2.destroyAllWindows() 
