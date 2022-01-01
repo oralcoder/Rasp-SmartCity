@@ -23,8 +23,14 @@ cv2.imshow('Blurred1', img)
 imgBlurred = cv2.GaussianBlur(img, ksize=(9,9), sigmaX=0)
 cv2.imshow('Blurred2', img)
 cv2.waitKey(0)
-
 cv2.destroyAllWindows() 
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+print(gray.shape, gray.size)
+cv2.imshow('GRAY', gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows() 
+
 
 ret, thres = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)       # max_value | 0
 cv2.imshow('BINARY', thres)
