@@ -27,15 +27,15 @@ cv2.waitKey(0)
 cv2.destroyAllWindows() 
 
 ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)       # max_value | 0
-cv2.imshow('BINARY', img)
+cv2.imshow('BINARY', thres)
 ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)   # 0 | max_value
-cv2.imshow('BINARY_INV', img)
+cv2.imshow('BINARY_INV', thres)
 ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)        # threshold | original
-cv2.imshow('TRUNC', img)
+cv2.imshow('TRUNC', thres)
 ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO)       # original | 0
-cv2.imshow('TOZERO', img)
+cv2.imshow('TOZERO', thres)
 ret, thres = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO_INV)   # 0 | original
-cv2.imshow('TOZERO_INV', img)
+cv2.imshow('TOZERO_INV', thres)
 cv2.waitKey(0)
 cv2.destroyAllWindows() 
 
