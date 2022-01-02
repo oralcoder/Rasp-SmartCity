@@ -6,3 +6,4 @@
 wget https://pjreddie.com/media/files/yolov3-tiny.weights
 ```
 
+## COCO Dataset Class 파일 다운로드
